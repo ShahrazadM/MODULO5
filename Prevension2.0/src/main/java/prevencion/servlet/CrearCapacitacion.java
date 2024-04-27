@@ -17,7 +17,7 @@ public class CrearCapacitacion extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType("text/html");
+    	getServletContext().getRequestDispatcher("/Views/crearcapacitacion").forward(request, response);
         PrintWriter out = response.getWriter();
         out.println("<html><head><title>Formulario de Crear Capacitación</title></head><body>");
         out.println("<h1>Formulario de Crear Capacitación</h1>");

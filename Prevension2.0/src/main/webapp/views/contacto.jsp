@@ -10,8 +10,9 @@
 <body>
 
     <h1>Formulario de Contacto</h1>
-    <form method="post" action="ContactoServlet">
+    <form method="post" action="Contacto">
         Nombre: <input type="text" name="nombre"><br>
+        
         Email: <input type="email" name="email"><br>
         Mensaje: <textarea name="mensaje"></textarea><br>
         <input type="submit" value="Enviar">

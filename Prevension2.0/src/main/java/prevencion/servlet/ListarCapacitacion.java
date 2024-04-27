@@ -13,17 +13,17 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet implementation class ListarCapacitaciones
  */
 
-@WebServlet("/ListarCapacitacione")
+@WebServlet("/ListarCapacitacion")
 public class ListarCapacitacion extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private List<String> capacitaciones = new ArrayList<>();
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Establecer atributo en la solicitud para que la página JSP pueda acceder a las capacitaciones
-        request.setAttribute("capacitaciones", capacitaciones);
+    	request.setAttribute("capacitaciones", capacitaciones);
 
         // Reenviar la solicitud a la página JSP para que la procese y la muestre
-        request.getRequestDispatcher("/listarCapacitaciones.jsp").forward(request, response);
+    	getServletContext().getRequestDispatcher("/listarcapacitacion.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

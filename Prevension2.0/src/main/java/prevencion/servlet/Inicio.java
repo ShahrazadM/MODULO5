@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class Inicio
  */
-@WebServlet("/Inicio")
+@WebServlet("/")
 public class Inicio extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -27,10 +27,9 @@ public class Inicio extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // Aquí puedes agregar lógica para obtener datos necesarios para la página de inicio
-
+        
         // Redirige a la página JSP correspondiente
-        request.getRequestDispatcher("/views/inicio.jsp").forward(request, response);
+    	getServletContext().getRequestDispatcher("/Views/home.jsp").forward(request, response);
     }
 
   
