@@ -29,7 +29,7 @@ public class Inicio extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         
         // Redirige a la página JSP correspondiente
-    	getServletContext().getRequestDispatcher("/Views/home.jsp").forward(request, response);
+    	getServletContext().getRequestDispatcher("/Views/login.jsp").forward(request, response);
     }
 
   
