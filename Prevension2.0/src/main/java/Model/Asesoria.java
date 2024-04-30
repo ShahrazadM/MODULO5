@@ -1,4 +1,4 @@
-package basedatitos;
+package Model;
 
 public interface Asesoria {
 

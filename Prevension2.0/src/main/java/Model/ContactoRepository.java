@@ -1,8 +1,7 @@
-package basedatitos;
+package Model;
 import java.util.ArrayList;
 import java.util.List;
 
-import prevencion.servlet.Contacto;
 
 public class ContactoRepository {
     // Lista para almacenar los contactos

@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<!DOCTYPE html>
+
+  <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -19,8 +20,9 @@
         <input type="submit" value="Iniciar sesión">
     </form>
 
-    <%-- Si hay un parámetro de error en la URL, mostrar un mensaje de error --%>
-    <% if ("1".equals(request.getParameter("error"))) { %>
+    <!-- Si hay un parámetro de error en la URL, mostrar un mensaje de error -->
+    <% String error = request.getParameter("error"); %>
+    <% if (error != null && error.equals("1")) { %>
         <p style="color: red;">¡Credenciales incorrectas! Inténtelo de nuevo.</p>
     <% } %>
 </body>

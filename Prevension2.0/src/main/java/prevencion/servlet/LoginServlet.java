@@ -6,10 +6,17 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import basedatitos.BaseDatosUsuarios;
+import Model.BaseDatosUsuarios;
+
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // Redirigir a la página de inicio de sesión (login.jsp)
+    	getServletContext().getRequestDispatcher("/views/login.jsp").forward(request, response);
+    	 
+    }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Obtener los parámetros de la solicitud (rut y clave)
@@ -18,14 +25,24 @@ public class LoginServlet extends HttpServlet {
 
         // Verificar las credenciales del usuario utilizando la base de datos simulada
         BaseDatosUsuarios baseDatos = new BaseDatosUsuarios();
-        boolean credencialesCorrectas = baseDatos.verificarCredenciales(rut, clave);
+        String tipoUsuario = baseDatos.verificarCredenciales(rut, clave);
 
-        if (credencialesCorrectas) {
-            // Si las credenciales son correctas, redirigir a la página home.jsp
-            response.sendRedirect("/views/home.jsp");
+        // Redirigir según el tipo de usuario
+        if (tipoUsuario != null) {
+            switch (tipoUsuario) {
+                case "cliente":
+                    response.sendRedirect("/views/home.jsp");
+                    break;
+                case "administrador":
+                    response.sendRedirect("/views/home.jsp");
+                    break;
+                case "profesional":
+                    response.sendRedirect("/views/home.jsp");
+                    break;
+            }
         } else {
             // Si las credenciales son incorrectas, redirigir a la página de login con un mensaje de error
-            response.sendRedirect("/views/login.jsp?error=1");
+            response.sendRedirect("/Views/login.jsp?error=1");
         }
     }
 }

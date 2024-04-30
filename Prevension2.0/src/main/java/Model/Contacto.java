@@ -1,13 +1,17 @@
-package basedatitos;
+package Model;
 
-
-public class ContactoDAO {
-	
+public class Contacto {
+	 
+		
 	    private String nombre;
 	    private String email;
 	    private String mensaje;
 
-	    public ContactoDAO(String nombre, String email, String mensaje) {
+	    public Contacto() {
+	        
+	    }
+	    
+	    public Contacto(String nombre, String email, String mensaje) {
 	        this.nombre = nombre;
 	        this.email = email;
 	        this.mensaje = mensaje;

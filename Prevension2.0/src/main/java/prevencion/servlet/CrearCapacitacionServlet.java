@@ -8,15 +8,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import basedatitos.Capacitacion;
-import basedatitos.Contenedor;
+import Model.Capacitacion;
+import Model.Contenedor;
 
 @WebServlet("/CrearCapacitacionServlet")
 public class CrearCapacitacionServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("/Views/crearcapacitacion.jsp").forward(request, response);
-       
+        
+        getServletContext().getRequestDispatcher("/views/crearcapacitacion").forward(request, response);
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -44,7 +44,8 @@ public class CrearCapacitacionServlet extends HttpServlet {
         // Guardar la nueva capacitación en el contenedor
         contenedor.almacenarCapacitacion(nuevaCapacitacion);
 
-        // Redirigir a una página de home
-        response.sendRedirect("/views/home.jsp.jsp");
+        // Redirigir a la página de mensaje
+        request.getRequestDispatcher("/views/mensajeconfirmacion.jsp").forward(request, response);
+
     }
 }
