@@ -27,9 +27,10 @@ public class Inicio extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        
+    	// Puedes enviar atributos al JSP para que se muestren en la página
+        request.setAttribute("mensaje", "Bienvenido a la página de Home");
         // Redirige a la página JSP correspondiente
-    	getServletContext().getRequestDispatcher("/Views/login.jsp").forward(request, response);
+    	getServletContext().getRequestDispatcher("/views/home.jsp").forward(request, response);
     }
 
   

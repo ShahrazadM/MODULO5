@@ -1,7 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
- <%@ page import="basedatitos.Capacitacion"%>
-    
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="Model.Capacitacion" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+  
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,6 +9,7 @@
     <title>Listado de Capacitaciones</title>
 </head>
 <body>
+    <%@ include file="mimenu.jsp" %> <!-- Incluye el menú -->
     <h2>Listado de Capacitaciones</h2>
     <table border="1">
         <tr>
@@ -22,16 +23,15 @@
         </tr>
         <c:forEach var="capacitacion" items="${capacitaciones}">
             <tr>
-                <td>${capacitacion.identificador}</td>
-                <td>${capacitacion.rutCliente}</td>
-                <td>${capacitacion.dia}</td>
-                <td>${capacitacion.hora}</td>
-                <td>${capacitacion.lugar}</td>
-                <td>${capacitacion.duracion}</td>
-                <td>${capacitacion.cantidadAsistentes}</td>
+                <td>${capacitacion.getIdentificador()}</td>
+                <td>${capacitacion.getRutCliente()}</td>
+                <td>${capacitacion.getDia()}</td>
+                <td>${capacitacion.getHora()}</td>
+                <td>${capacitacion.getLugar()}</td>
+                <td>${capacitacion.getDuracion()}</td>
+                <td>${capacitacion.getCantidadAsistentes()}</td>
             </tr>
         </c:forEach>
     </table>
-    
 </body>
 </html>

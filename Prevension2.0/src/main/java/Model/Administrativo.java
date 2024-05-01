@@ -1,4 +1,4 @@
-package basedatitos;
+package Model;
 
 public class Administrativo extends Usuario implements Asesoria {
 

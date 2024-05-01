@@ -1,16 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+
+<%@ page import ="Model.*" %>
+    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <%@ include file="mimenu.jsp" %> <!-- Incluye el menú -->
-<title>Formulario de Contacto</title>
+<title>FormularioContacto</title>
 </head>
 <body>
 
     <h1>Formulario de Contacto</h1>
-    <form method="post" action="Contacto">
+    <form method="post" action="ContactoServlet">
         Nombre: <input type="text" name="nombre"><br>
         
         Email: <input type="email" name="email"><br>

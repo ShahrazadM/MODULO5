@@ -1,4 +1,4 @@
-package basedatitos;
+package Model;
 
 public class Profesional extends Usuario {
 	private String titulo;
