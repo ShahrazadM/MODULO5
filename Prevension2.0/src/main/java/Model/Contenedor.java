@@ -1,75 +1,62 @@
 package Model;
 
-
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
 public class Contenedor {
 
-    private List<Asesoria> listaUsuarios;
+    private static final Asesoria[] listaUsuarios = null;
+	private List<Cliente> listaClientes;
+    private List<Profesional> listaProfesionales;
+    private List<Administrativo> listaAdministrativos;
     private List<Capacitacion> listaCapacitaciones;
 
     // Constructor
     public Contenedor() {
-        listaUsuarios = new ArrayList<>();
+        listaClientes = new ArrayList<>();
+        listaProfesionales = new ArrayList<>();
+        listaAdministrativos = new ArrayList<>();
         listaCapacitaciones = new ArrayList<>();
     }
 
-    // Método para almacenar un cliente en la lista de usuarios
-    public void almacenarCliente(Cliente cliente) {
-        listaUsuarios.add(cliente);
+    // Métodos para almacenar usuarios
+    public void agregarCliente(Cliente cliente) {
+        listaClientes.add(cliente);
     }
 
-    // Método para almacenar un profesional en la lista de usuarios
-    public void almacenarProfesional(Profesional profesional) {
-        listaUsuarios.add(profesional);
+    public void agregarProfesional(Profesional profesional) {
+        listaProfesionales.add(profesional);
     }
 
-    // Método para almacenar un administrativo en la lista de usuarios
-    public void almacenarAdministrativo(Administrativo administrativo) {
-        listaUsuarios.add(administrativo);
+    public void agregarAdministrativo(Administrativo administrativo) {
+        listaAdministrativos.add(administrativo);
     }
 
-    // Método para almacenar una capacitación en la lista de capacitaciones
-    public void almacenarCapacitacion(Capacitacion capacitacion) {
+    // Método para almacenar una capacitación
+    public void agregarCapacitacion(Capacitacion capacitacion) {
         listaCapacitaciones.add(capacitacion);
     }
 
-    // Método para eliminar un usuario de la lista de usuarios por su RUN
-    public void eliminarUsuario(int runUsuario) {
-        Iterator<Asesoria> iterator = listaUsuarios.iterator();
-        while (iterator.hasNext()) {
-            Asesoria usuario = iterator.next();
-            if (usuario instanceof Usuario && ((Usuario) usuario).getRun() == runUsuario) {
-                iterator.remove();
-                System.out.println("Usuario eliminado exitosamente.");
-                return;
-            }
-        }
-        System.out.println("Usuario con RUN " + runUsuario + " no encontrado.");
+    // Métodos para obtener listas de usuarios y capacitaciones
+    public List<Cliente> obtenerClientes() {
+        return listaClientes;
+    }
+
+    public List<Profesional> obtenerProfesionales() {
+        return listaProfesionales;
+    }
+
+    public List<Administrativo> obtenerAdministrativos() {
+        return listaAdministrativos;
+    }
+
+    public List<Capacitacion> obtenerCapacitaciones() {
+        return listaCapacitaciones;
     }
 
     
-    //Método para listar todos los usuarios
-    public void listarUsuarios() {
-        for (Asesoria asesoria : listaUsuarios) {
-            System.out.println(asesoria);
-        }
-    }
-
-    
-    
-    // Método para listar usuarios por tipo
-    public void listarUsuariosPorTipo(String tipo) {
-        for (Asesoria asesoria : listaUsuarios) {
-            if (asesoria.getClass().getSimpleName().equalsIgnoreCase(tipo)) {
-                System.out.println(asesoria);
-            }
-        }
-    }
-    
+   
  // Método para listar todas las capacitaciones y devolver la lista
     public List<Capacitacion> listarCapacitaciones() {
         return listaCapacitaciones;
@@ -96,13 +83,31 @@ public class Contenedor {
             case "administrativo":
                 Administrativo administrativo = new Administrativo();
                 // Aquí ingresa la lógica para solicitar y establecer los datos del administrativo
-                almacenarAdministrativo(administrativo);
+                agregarAdministrativo(administrativo);
                 System.out.println("Administrativo almacenado exitosamente.");
                 break;
             default:
                 System.out.println("Tipo de usuario no válido.");
         }
     }
+
+	private void almacenarCliente(Cliente cliente) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void almacenarProfesional(Profesional profesional) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void almacenarCapacitacion(Capacitacion capacitacion) {
+	    listaCapacitaciones.add(capacitacion);
+	}
+
+	public static Asesoria[] getListausuarios() {
+		return listaUsuarios;
+	}
 }
 	
 
