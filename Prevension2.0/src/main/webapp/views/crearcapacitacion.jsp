@@ -5,10 +5,10 @@
 <head>
     <meta charset="UTF-8">
     
-    <title>CrearCapacitación</title>
+    <title>Crear Nueva Capacitación</title>
 </head>
 <body>
-	<%@ include file="mimenu.jsp" %> <!-- Incluye el menú -->
+    <%@ include file="mimenu.jsp" %> <!-- Incluye el menú -->
     <h2>Crear Nueva Capacitación</h2>
     <form action="CrearCapacitacionServlet" method="post">
         <label for="identificador">Identificador:</label><br>
