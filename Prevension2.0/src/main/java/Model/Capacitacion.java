@@ -89,4 +89,9 @@ public class Capacitacion {
     public void setCantidadAsistentes(int cantidadAsistentes) {
         this.cantidadAsistentes = cantidadAsistentes;
     }
+
+	public String getNombre() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
